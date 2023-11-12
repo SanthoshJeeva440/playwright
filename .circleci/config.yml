@@ -17,19 +17,14 @@ jobs:
           playwright install chrome
       - run:
           name: Run tests
-          command: python -m pytest
+          command: python -m pytest --template=html1/index.html --report=reports/report.html
+      - name: Upload test results
+      - store_artifacts:
+          path: reports
       - persist_to_workspace:
           root: ~/project
           paths:
             - .
-
-  deploy: # this can be any name you choose
-    executor: python/default
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - heroku/deploy-via-git:
-          force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
 
 workflows:
   test_my_app:
