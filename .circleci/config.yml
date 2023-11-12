@@ -18,9 +18,6 @@ jobs:
       - run:
           name: Run tests
           command: python -m pytest --template=html1/index.html --report=reports/report.html
-      - name: Upload test results
-      - store_artifacts:
-          path: reports
       - persist_to_workspace:
           root: ~/project
           paths:
