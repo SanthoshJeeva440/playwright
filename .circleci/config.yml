@@ -20,7 +20,7 @@ jobs:
           command: |
             mkdir test-results
             python -m pytest --template=html1/index.html --report=test-results/report.html
-      - store_test_results:
+      - store_artifacts:
           path: test-results
 
 workflows:
