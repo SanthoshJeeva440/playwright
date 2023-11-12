@@ -17,4 +17,4 @@ class BasePage:
     def sleep(self, time):
         self.page.wait_for_timeout(int(time))
         return self
-    
+
