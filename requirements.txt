@@ -2,4 +2,3 @@ playwright
 pytest-playwright
 jproperties
 pytest-reporter-html1
-playwright install
